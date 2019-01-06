@@ -1,12 +1,15 @@
 import React from 'react'
 import Home from './Home'
 import Search from './Search'
-// import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI'
 import './App.css'
 
 class BooksApp extends React.Component {
   state = {
     Books:[]
+  }
+  getBookDetails = () => {
+   BooksAPI.getAll().then((books)=> {this.setState({Books: books})})
   }
 
   render() {
