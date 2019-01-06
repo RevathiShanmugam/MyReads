@@ -21,7 +21,7 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-          <Home books={this.state.Books}/>
+          <Home books={this.state.Books} onChange={this.updateBookDetails}/>
       </div>
     )
   }

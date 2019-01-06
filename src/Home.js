@@ -9,9 +9,15 @@ class Home extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-            <BookShelf/>
-            <BookShelf/>
-            <BookShelf/>
+          <BookShelf books={this.props.books.filter(
+                (book)=>(book.shelf === "currentlyReading"))}
+                title = "Currently Reading" onChangeShelf={this.props.onChange}/>
+          <BookShelf books={this.props.books.filter(
+                (book)=>(book.shelf === "read"))}
+                title = "Read" onChangeShelf={this.props.onChange}/>
+          <BookShelf books={this.props.books.filter(
+                (book)=>(book.shelf === "wantToRead"))}
+                title = "Want to Read" onChangeShelf={this.props.onChange}/>
           </div>
         </div>
         <div className="open-search">
